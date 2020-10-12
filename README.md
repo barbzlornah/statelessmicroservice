@@ -13,7 +13,7 @@ To get up and running:
 
 **1.** Clone the repo.
 ```
-git clone https://github.com/barbzlornah/stateless-microservice.git
+git clone https://github.com/barbzlornah/statelessmicroservice.git
 ```
 
 **2.**  ```cd``` into repo. Use the same directory name(below) if you do not change it.

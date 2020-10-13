@@ -7,12 +7,12 @@ const morgan = require('morgan')
 const fs = require('fs')
 
 const users = require('./routes/users')
-const api = require('./routes/features')
+
 
 const app = express()
 
 // Create a write stream
-const accessLogStream = fs.createWriteStream(path.join(__dirname, 'hackerbay.log'), {flags: 'a'})
+const accessLogStream = fs.createWriteStream(path.join(__dirname, 'stateless.log'), {flags: 'a'})
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'))
@@ -25,7 +25,7 @@ app.use(cookieParser())
 app.use(express.static(path.join(__dirname, 'public')))
 app.use(morgan('combined', { stream: accessLogStream }))
 
-app.use('/api', api)
+
 app.use('/api/users', users)
 
 // catch 404 and forward to error handler

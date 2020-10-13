@@ -75,6 +75,10 @@ Unit testing is done using mochai.
 
 Run ```npm test``` from the application's root directory.
 
+## Logging
+
+All logs are saved in ```stateless.log``` in the application's root.
+
 
 ## Built With
 

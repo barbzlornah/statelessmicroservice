@@ -40,43 +40,6 @@ describe('Stateless Microservice', () => {
     })
   })
 
-  describe('Thumbnail creation', () => {
-    it('it should accept a public image url and return a resized image', (done) => {
-      request.agent(app)
-        .post('/api/create-thumbnail')
-        .set('token', token)
-        .send({ imageUrl: imageUrl })
-        .end((err, res) => {
-          expect(res.statusCode).to.equal(200)
-          expect(res.body.converted).to.equal(true)
-        })
-      done()
-    })
-
-    it('it should not process image if token is invalid', (done) => {
-      request.agent(app)
-        .post('/api/create-thumbnail')
-        .set('token', 'randomewwrongtoken')
-        .send({ imageUrl: imageUrl })
-        .end((err, res) => {
-          expect(res.statusCode).to.equal(401)
-          expect(res.body.authorized).to.equal(false)
-        })
-      done()
-    })
-
-    it('it should not process image if url is invalid', (done) => {
-      request.agent(app)
-        .post('/api/create-thumbnail')
-        .set('token', token)
-        .send({ imageUrl: invalidImageUrl })
-        .end((err, res) => {
-          expect(res.statusCode).to.equal(400)
-        })
-      done()
-    })
-  })
-
   describe('Patch object', () => {
     it('it should patch object A with object B', (done) => {
       request.agent(app)

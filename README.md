@@ -71,7 +71,7 @@ Apply json patch to a json object, and return the resulting json object.
 
 ## Unit Testing
 
-Unit testing is done using mochai.
+Unit testing is done using mocha.
 
 Run ```npm test``` from the application's root directory.
 
